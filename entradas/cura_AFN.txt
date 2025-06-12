@@ -1,0 +1,9 @@
+Q: I q1 q2 q3 F
+I: I
+F: F
+I -> q1 | l
+I -> q2 | m
+q1 -> q3 | m
+q2 -> q3 | a
+q3 -> F  | c
+---

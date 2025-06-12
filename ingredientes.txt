@@ -1,0 +1,6 @@
+Água  = a
+Mel = m
+Lágrima de ogro = l
+Sal = s
+Folha = f
+Capim = c
