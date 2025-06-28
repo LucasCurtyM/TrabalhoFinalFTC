@@ -34,7 +34,18 @@ public class main{
                 while((continuar == 1));
                 break;
             case 2:
-                //pilha
+                do {
+                    APDMain.main(args);
+
+                    System.out.println("Deseja continuar fazendo poções com APD?");
+                    System.out.println("1- Sim");
+                    System.out.println("0- Encerrar");
+                    continuar = scanner.nextInt();
+                    while (!(continuar == 0 || continuar == 1)) {
+                        System.out.println("Informe uma opção válida");
+                        continuar = scanner.nextInt();
+                    }
+                } while (continuar == 1);
                 break;
         }
     }

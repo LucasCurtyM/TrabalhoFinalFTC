@@ -1,0 +1,142 @@
+Q: q0 q1 q2 qf
+I: q0
+F: qf
+P: Z
+
+// Primeira transição: qualquer ingrediente a partir do estado inicial
+q0, a, Z -> q1, D
+q0, m, Z -> q1, A
+q0, l, Z -> q1, M
+q0, s, Z -> q1, S
+q0, f, Z -> q1, R
+q0, c, Z -> q1, E
+
+// Segunda transição: qualquer ingrediente a partir do estado q1
+q1, a, D -> q2, D
+q1, m, D -> q2, A
+q1, l, D -> q2, M
+q1, s, D -> q2, S
+q1, f, D -> q2, R
+q1, c, D -> q2, E
+
+q1, a, A -> q2, D
+q1, m, A -> q2, A
+q1, l, A -> q2, M
+q1, s, A -> q2, S
+q1, f, A -> q2, R
+q1, c, A -> q2, E
+
+q1, a, M -> q2, D
+q1, m, M -> q2, A
+q1, l, M -> q2, M
+q1, s, M -> q2, S
+q1, f, M -> q2, R
+q1, c, M -> q2, E
+
+q1, a, S -> q2, D
+q1, m, S -> q2, A
+q1, l, S -> q2, M
+q1, s, S -> q2, S
+q1, f, S -> q2, R
+q1, c, S -> q2, E
+
+q1, a, R -> q2, D
+q1, m, R -> q2, A
+q1, l, R -> q2, M
+q1, s, R -> q2, S
+q1, f, R -> q2, R
+q1, c, R -> q2, E
+
+q1, a, E -> q2, D
+q1, m, E -> q2, A
+q1, l, E -> q2, M
+q1, s, E -> q2, S
+q1, f, E -> q2, R
+q1, c, E -> q2, E
+
+// Terceira transição: qualquer ingrediente a partir do estado q2 leva ao final
+q2, a, D -> qf, D
+q2, m, D -> qf, A
+q2, l, D -> qf, M
+q2, s, D -> qf, S
+q2, f, D -> qf, R
+q2, c, D -> qf, E
+
+q2, a, A -> qf, D
+q2, m, A -> qf, A
+q2, l, A -> qf, M
+q2, s, A -> qf, S
+q2, f, A -> qf, R
+q2, c, A -> qf, E
+
+q2, a, M -> qf, D
+q2, m, M -> qf, A
+q2, l, M -> qf, M
+q2, s, M -> qf, S
+q2, f, M -> qf, R
+q2, c, M -> qf, E
+
+q2, a, S -> qf, D
+q2, m, S -> qf, A
+q2, l, S -> qf, M
+q2, s, S -> qf, S
+q2, f, S -> qf, R
+q2, c, S -> qf, E
+
+q2, a, R -> qf, D
+q2, m, R -> qf, A
+q2, l, R -> qf, M
+q2, s, R -> qf, S
+q2, f, R -> qf, R
+q2, c, R -> qf, E
+
+q2, a, E -> qf, D
+q2, m, E -> qf, A
+q2, l, E -> qf, M
+q2, s, E -> qf, S
+q2, f, E -> qf, R
+q2, c, E -> qf, E
+
+//quarta ou mais transições (pode haver mais transições)
+qf, a, D -> qf, D
+qf, m, D -> qf, A       
+qf, l, D -> qf, M
+qf, s, D -> qf, S
+qf, f, D -> qf, R
+qf, c, D -> qf, E
+
+qf, a, A -> qf, D
+qf, m, A -> qf, A
+qf, l, A -> qf, M
+qf, s, A -> qf, S
+qf, f, A -> qf, R
+qf, c, A -> qf, E
+
+qf, a, M -> qf, D       
+qf, m, M -> qf, A
+qf, l, M -> qf, M
+qf, s, M -> qf, S   
+qf, f, M -> qf, R
+qf, c, M -> qf, E
+
+qf, a, S -> qf, D
+qf, m, S -> qf, A
+qf, l, S -> qf, M
+qf, s, S -> qf, S
+qf, f, S -> qf, R
+qf, c, S -> qf, E
+
+qf, a, R -> qf, D
+qf, m, R -> qf, A
+qf, l, R -> qf, M
+qf, s, R -> qf, S
+qf, f, R -> qf, R
+qf, c, R -> qf, E
+
+qf, a, E -> qf, D
+qf, m, E -> qf, A
+qf, l, E -> qf, M
+qf, s, E -> qf, S
+qf, f, E -> qf, R   
+qf, c, E -> qf, E
+
