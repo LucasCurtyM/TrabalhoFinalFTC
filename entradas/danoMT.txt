@@ -1,0 +1,24 @@
+Q: I q1 q2 F erro
+I: I
+F: F
+
+# Formato: origem -> destino | lido,escreve,move
+
+I   -> q1   | 0, X, R
+I   -> q2   | 1, Y, R
+I   -> F    | _, _, R
+
+q1  -> q1   | 0, 0, R
+q1  -> q1   | 1, 1, R
+q1  -> q2   | _, _, L
+
+q2  -> q2   | X, X, L
+q2  -> q2   | Y, Y, L
+q2  -> F    | _, _, R
+
+# Transições para erro (completude)
+I   -> erro | X, X, R  Y, Y, R
+q1  -> erro | X, X, R  Y, Y, R
+q2  -> erro | 0, 0, L  1, 1, L
+F   -> erro | 0, 0, R  1, 1, R  X, X, R  Y, Y, R
+erro -> erro | 0, 0, R  1, 1, R  X, X, R  Y, Y, R  _, _, R

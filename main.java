@@ -12,6 +12,7 @@ public class main{
 
         System.out.println("1- Autômato Finito (AF): ");
         System.out.println("2- Autômato Pilha (AP): ");
+        System.out.println("3- Máquina de Turing (MT): ");
         System.out.println("0- Sair ");
         System.out.print("Opção: ");
         escolha = scanner.nextInt();
@@ -44,6 +45,23 @@ public class main{
                     System.out.println("\n\n");
                     System.out.println("=".repeat(70));
                     System.out.println("Deseja continuar fazendo poções com APD?");
+                    System.out.println("1- Sim");
+                    System.out.println("0- Encerrar");
+                    System.out.print("Opção: ");
+                    continuar = scanner.nextInt();
+                    while (!(continuar == 0 || continuar == 1)) {
+                        System.out.println("Informe uma opção válida");
+                        System.out.print("Opção: ");
+                        continuar = scanner.nextInt();
+                    }
+                } while (continuar == 1);
+                break;
+              case 3:
+                do {
+                    MTmain.main(args);
+                    System.out.println("\n\n");
+                    System.out.println("=".repeat(70));
+                    System.out.println("Deseja continuar fazendo poções com Máquina de Turing?");
                     System.out.println("1- Sim");
                     System.out.println("0- Encerrar");
                     System.out.print("Opção: ");
