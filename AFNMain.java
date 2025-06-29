@@ -12,9 +12,14 @@ public class AFNMain {
         Scanner scanner = new Scanner(System.in);
         AFN afn = new AFN();
 
+        System.out.println("╔════════════════════════════════════════════════════════════╗");
+        System.out.println("║                   LABORATÓRIO DE POÇÕES                    ║");
+        System.out.println("║          Autômato Finito Não Deterministico (AFN)          ║");
+        System.out.println("╚════════════════════════════════════════════════════════════╝");
+        
+        System.out.println("\n\n\n" + "-".repeat(70));
         System.out.print("Digite o nome do arquivo .txt com a definição do AFN: ");
         String nomeArquivo = scanner.nextLine().trim();
-
         try (BufferedReader br = new BufferedReader(new FileReader(nomeArquivo))) {
             String linha;
 
@@ -48,9 +53,12 @@ public class AFNMain {
             System.out.println("Encerrando Sistema");
             System.exit(0);
         }
+        
+        System.out.println("\nArquivo lido corretamente!" +"\n\n\n");
 
         StringBuilder entrada = new StringBuilder();
-        System.out.println("Insira o símbolo do primeiro ingrediente da receita:");
+        System.out.println("-".repeat(70));
+        System.out.print("Insira o símbolo do primeiro ingrediente da receita:");
 
         while (true) {
             String simbolo = scanner.nextLine().trim();
@@ -65,26 +73,31 @@ public class AFNMain {
 
             entrada.append(simbolo.charAt(0));
 
-            System.out.print("Deseja inserir mais um ingrediente (s/n)? ");
+            System.out.print("\nDeseja inserir mais um ingrediente (s/n)? ");
             String resp = scanner.nextLine().trim().toLowerCase();
 
             while (!resp.equals("s") && !resp.equals("n")) {
-                System.out.print("Entrada inválida. Digite 's' para sim ou 'n' para não: ");
+                System.out.print("\nEntrada inválida. Digite 's' para sim ou 'n' para não: ");
                 resp = scanner.nextLine().trim().toLowerCase();
             }
 
             if (!resp.equals("s")) break;
-            System.out.print("Qual ingrediente será inserido: ");
+            System.out.print("\nQual ingrediente será inserido: ");
         }
 
+
+        System.out.println("\n" + "-".repeat(50));
+        System.out.println("PROCESSANDO RECEITA: " + entrada.toString());
+        System.out.println("-".repeat(50));
 
         boolean resultado = afn.processarEntrada(entrada.toString());
 
+        System.out.println("\n\n" + "=".repeat(50));
         if (resultado) {
-            System.out.println("Poção criada com sucesso!");
+            System.out.println("\u001B[32m" + "RESULTADO: Poção criada com sucesso!"+ "\u001B[0m");
         } else {
-            System.out.println("Nenhuma Poção criada.");
-            
+            System.out.println("\u001B[31m" + "RESULTADO: Nenhuma Poção criada." + "\u001B[0m");
         }
+            System.out.println("=".repeat(50) + "\n");
     }
 }

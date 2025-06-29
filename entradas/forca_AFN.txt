@@ -1,0 +1,15 @@
+Q: I q1 q2 F erro
+I: I
+F: F
+
+I -> q1 | m
+q1 -> q2 | f
+q2 -> F | c
+
+I -> erro | a l s f c o p
+q1 -> erro | a l s c o p m
+q2 -> erro | a l s m o p f
+F -> erro | a m l o p s f c
+erro -> erro | a m l o p s f c
+
+---

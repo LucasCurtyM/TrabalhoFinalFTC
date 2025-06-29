@@ -1,9 +1,15 @@
-Q: I q1 q2 q3 F
+Q: I q1 q2 F erro
 I: I
 F: F
-I -> q1 | l
-I -> q2 | m
-q1 -> q3 | m
-q2 -> q3 | a
-q3 -> F  | c
----
+
+I    -> q1    | a
+q1 -> q2    | s
+q2 -> F       | f
+
+# Transições para erro (completude)
+I    -> erro    | m l s f c o 
+q1 -> erro    | a m l  f c o
+q2 -> erro    | a m l s  c o
+F    -> erro    | a m l o  s f c
+erro -> erro    | a  m l s f c o
+

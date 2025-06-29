@@ -1,8 +1,0 @@
-Q: I q1 q2 q3 F
-I: I
-F: F
-I -> q1 | a
-q1 -> q2 | s
-q2 -> q3 | m
-q3 -> F  | c
----

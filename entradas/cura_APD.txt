@@ -1,0 +1,14 @@
+Q: I q1 q2 F
+I: I
+F: F
+P: Z
+
+// Primeira transição
+I, a, Z -> q1, D
+
+//Segunda transição
+q1, s, D -> q2, S
+
+// Terceira transição
+q2, f, S -> F, R
+    

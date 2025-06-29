@@ -68,9 +68,9 @@ public class APD {
         ingredientes.put('a', new Ingrediente('a', "Água", "Líquido transparente, base neutra"));
         ingredientes.put('m', new Ingrediente('m', "Mel", "Substância doce, propriedades energizantes"));
         ingredientes.put('l', new Ingrediente('l', "Lágrima de ogro", "Líquido viscoso, propriedades mágicas"));
-        ingredientes.put('s', new Ingrediente('s', "Sálvia", "Erva aromática, propriedades purificadoras"));
+        ingredientes.put('s', new Ingrediente('s', "Sal", "Erva aromática, propriedades purificadoras"));
         ingredientes.put('f', new Ingrediente('f', "Folha de carvalho", "Folha robusta, aumenta resistência"));
-        ingredientes.put('c', new Ingrediente('c', "Casca de árvore", "Casca envelhecida, estabilizante natural"));
+        ingredientes.put('c', new Ingrediente('c', "capim", "Casca envelhecida, estabilizante natural"));
     }
 
     // Exibe informações de um ingrediente
@@ -98,7 +98,7 @@ public class APD {
         reacoes.put('l', 'M'); // Lágrima de ogro provoca Magia
         reacoes.put('s', 'S'); // Sal provoca Salgamento
         reacoes.put('f', 'R'); // Folha de carvalho provoca Resistência
-        reacoes.put('c', 'E'); // Casca de árvore provoca Estabilidade
+        reacoes.put('c', 'E'); // capim provoca Estabilidade
     }
 
     public boolean processarEntrada(String entrada) {

@@ -13,7 +13,7 @@ public class APDMain {
 
         // Exibe cabeçalho do sistema
         System.out.println("╔════════════════════════════════════════════════════════════╗");
-        System.out.println("║                🧙‍♀️ LABORATÓRIO DE POÇÕES 🧙‍♂️                ║");
+        System.out.println("║                   LABORATÓRIO DE POÇÕES                    ║");
         System.out.println("║           Autômato de Pilha Determinístico (APD)           ║");
         System.out.println("╚════════════════════════════════════════════════════════════╝");
 
@@ -55,8 +55,8 @@ public class APDMain {
                 }
             }
         } catch (IOException e) {
-            System.out.println("❌ Erro ao ler o arquivo: " + e.getMessage());
-            System.out.println("🔚 Encerrando Sistema");
+            System.out.println("Erro ao ler o arquivo: " + e.getMessage());
+            System.out.println("Encerrando Sistema");
             System.exit(0);
         }
 
@@ -71,25 +71,24 @@ public class APDMain {
 
         // Processamento interativo da receita
         StringBuilder entrada = new StringBuilder();
-        System.out.println("\n🧪 INICIANDO PROCESSO DE CRIAÇÃO DE POÇÃO...");
-        System.out.println("Insira o símbolo do primeiro ingrediente da receita:");
+        System.out.println("\nInsira o símbolo do primeiro ingrediente da receita:");
 
         while (true) {
-            System.out.print("➤ ");
+            System.out.print("> ");
             String simbolo = scanner.nextLine().trim();
 
             if ("none".equals(simbolo)) {
-                System.out.println("🚫 Processo cancelado pelo usuário!");
+                System.out.println("Processo cancelado pelo usuário!");
                 break;
             }
 
             if (simbolo.isEmpty()) {
-                System.out.println("⚠️ Por favor, digite um símbolo válido.");
+                System.out.println("Por favor, digite um símbolo válido.");
                 continue;
             }
 
             if (!simbolosValidos.contains(simbolo)) {
-                System.out.println("❌ Entrada inválida. Os símbolos válidos são: " + simbolosValidos);
+                System.out.println("Entrada inválida. Os símbolos válidos são: " + simbolosValidos);
                 System.out.println("Digite um símbolo válido:");
                 continue;
             }
@@ -100,7 +99,7 @@ public class APDMain {
             String resp = scanner.nextLine().trim().toLowerCase();
 
             while (!resp.equals("s") && !resp.equals("n")) {
-                System.out.print("⚠️ Entrada inválida. Digite 's' para sim ou 'n' para não: ");
+                System.out.print("Entrada inválida. Digite 's' para sim ou 'n' para não: ");
                 resp = scanner.nextLine().trim().toLowerCase();
             }
 
@@ -121,17 +120,15 @@ public class APDMain {
 
             System.out.println("\n" + "=".repeat(50));
             if (resultado) {
-                System.out.println("🎉 RESULTADO: Poção criada com sucesso!");
-                System.out.println("✨ A receita foi executada perfeitamente!");
+                System.out.println("\u001B[32m" + "RESULTADO: Poção criada com sucesso!" + "\u001B[0m");
             } else {
-                System.out.println("❌ RESULTADO: Nenhuma poção foi criada.");
-                System.out.println("💔 A receita não pôde ser completada.");
+                System.out.println("0\u001B[31m" + "RESULTADO: Nenhuma poção foi criada." + "\u001B[0m");
             }
             System.out.println("=".repeat(50));
         } else {
-            System.out.println("\n🚫 Nenhum ingrediente foi inserido. Processo encerrado.");
+            System.out.println("\nNenhum ingrediente foi inserido. Processo encerrado.");
         }
 
-        System.out.println("\n🔚 Obrigado por usar o Sistema de Produção de Poções!");
+        System.out.println("\nObrigado por usar o Sistema de Produção de Poções!");
     }
 }
