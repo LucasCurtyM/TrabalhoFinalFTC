@@ -73,6 +73,41 @@ public class main{
                     }
                 } while (continuar == 1);
                 break;
+                 case 4:
+                do {
+                    MooreMain.main(args);
+                    System.out.println("\n\n");
+                    System.out.println("=".repeat(70));
+                    System.out.println("Deseja continuar fazendo poções com Máquina de Moore?");
+                    System.out.println("1- Sim");
+                    System.out.println("0- Encerrar");
+                    System.out.print("Opção: ");
+                    continuar = scanner.nextInt();
+                    while (!(continuar == 0 || continuar == 1)) {
+                        System.out.println("Informe uma opção válida");
+                        System.out.print("Opção: ");
+                        continuar = scanner.nextInt();
+                    }
+                } while (continuar == 1);
+                break;
+                 case 5:
+                do {
+                    MealyMain.main(args);
+                    System.out.println("\n\n");
+                    System.out.println("=".repeat(70));
+                    System.out.println("Deseja continuar fazendo poções com Máquina de Mealy?");
+                    System.out.println("1- Sim");
+                    System.out.println("0- Encerrar");
+                    System.out.print("Opção: ");
+                    continuar = scanner.nextInt();
+                    while (!(continuar == 0 || continuar == 1)) {
+                        System.out.println("Informe uma opção válida");
+                        System.out.print("Opção: ");
+                        continuar = scanner.nextInt();
+                    }
+                } while (continuar == 1);
+                break;
         }
+        
     }
 }

@@ -1,0 +1,16 @@
+Q: I q1 q2 F erro
+I: I
+F: F
+
+# Formato: origem -> destino | símbolo_entrada/saída [espaço para múltiplas transições]
+
+I   -> q1   | a/X
+q1  -> q2   | s/Y
+q2  -> F    | f/Z
+
+# Transições para erro (completude)
+I   -> erro | m/E l/E s/E f/E c/E o/E
+q1  -> erro | a/E m/E l/E f/E c/E o/E
+q2  -> erro | a/E m/E l/E s/E c/E o/E
+F   -> erro | a/E m/E l/E o/E s/E f/E c/E
+erro -> erro | a/E m/E l/E s/E f/E c/E o/E
