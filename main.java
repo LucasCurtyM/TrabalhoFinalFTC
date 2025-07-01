@@ -14,7 +14,7 @@ public class main{
         System.out.println("2- Autômato Pilha (AP): ");
         System.out.println("3- Máquina de Turing (MT): ");
         System.out.println("4- Máquina de Moore (MM): ");
-        System.out.println("5- Máquina de Mealy (MM): ");
+        System.out.println("5- Máquina de Mealy (Me): ");
         System.out.println("0- Sair ");
         System.out.print("Opção: ");
         escolha = scanner.nextInt();
