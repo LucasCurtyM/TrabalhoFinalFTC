@@ -39,51 +39,54 @@ public class MaquinaTuring {
         transicoes.add(new Transicao(origem, destino, lido, escreve, move));
     }
 
-    public boolean processar(String entrada) {
-        // Substitui '_' por espaço e cria uma fita com margem extra
-        entrada = entrada.replace('_', ' ');
-        char[] fita = new char[entrada.length() + 20]; // margem extra
-        Arrays.fill(fita, ' ');
-        System.arraycopy(entrada.toCharArray(), 0, fita, 0, entrada.length());
+   public boolean processar(String entrada) {
+    // NÃO substitua '_' por espaço!
+     //entrada = entrada.replace('_', ' ');
 
-        int cabeca = 0;
-        String estadoAtual = estadoInicial;
+    // Use underline como branco
+    char[] fita = new char[entrada.length() + 20]; // margem extra
+    Arrays.fill(fita, '_');
+    System.arraycopy(entrada.toCharArray(), 0, fita, 0, entrada.length());
 
-        while (true) {
-            char simboloLido = fita[cabeca];
-            boolean encontrou = false;
+    int cabeca = 0;
+    String estadoAtual = estadoInicial;
 
-            for (Transicao t : transicoes) {
-                if (t.origem.equals(estadoAtual) && t.lido == simboloLido) {
-                    // Transição encontrada
-                    fita[cabeca] = t.escreve;
-                    estadoAtual = t.destino;
+    while (true) {
+        char simboloLido = fita[cabeca];
+        boolean encontrou = false;
 
-                    if (t.move == 'R') cabeca++;
-                    else if (t.move == 'L') cabeca--;
-                    // 'S' = Stay (não move a cabeça)
+        for (Transicao t : transicoes) {
+            if (t.origem.equals(estadoAtual) && t.lido == simboloLido) {
+                // Transição encontrada
+                fita[cabeca] = t.escreve;
+                estadoAtual = t.destino;
 
-                    encontrou = true;
-                    break;
-                }
+                if (t.move == 'R') cabeca++;
+                else if (t.move == 'L') {
+                    if (cabeca > 0) cabeca--;
+                    // Se já está em 0, não move mais para a esquerda
+    }
+                encontrou = true;
+                break;
             }
+        }
 
-            if (!encontrou) {
-                System.out.println("Erro: símbolo '" + simboloLido + "' não reconhecido no estado " + estadoAtual);
-                estadoAtual = estadoErro;
-            }
+        if (!encontrou) {
+            System.out.println("Erro: símbolo '" + simboloLido + "' não reconhecido no estado " + estadoAtual);
+            estadoAtual = estadoErro;
+        }
 
-            if (estadoAtual.equals(estadoErro)) {
-                System.out.println("Fita final: " + new String(fita).trim());
-                return false;
-            }
+        if (estadoAtual.equals(estadoErro)) {
+            System.out.println("Fita final: " + new String(fita).trim());
+            return false;
+        }
 
-            if (estadosFinais.contains(estadoAtual)) {
-                System.out.println("Fita final: " + new String(fita).trim());
-                return true;
-            }
+        if (estadosFinais.contains(estadoAtual)) {
+            System.out.println("Fita final: " + new String(fita).trim());
+            return true;
         }
     }
 
-  
+    }
 }
+

@@ -4,21 +4,47 @@ F: F
 
 # Formato: origem -> destino | lido,escreve,move
 
-I   -> q1   | 0, X, R
-I   -> q2   | 1, Y, R
-I   -> F    | _, _, R
+I->q1|a,m,R
+I->q1|m,m,R
+I->q2|l,s,R
+I->q2|s,s,R
+I->F|_,_,R
 
-q1  -> q1   | 0, 0, R
-q1  -> q1   | 1, 1, R
-q1  -> q2   | _, _, L
+q1->q1|a,a,R
+q1->q1|l,l,R
+q1->q2|_,_,L
 
-q2  -> q2   | X, X, L
-q2  -> q2   | Y, Y, L
-q2  -> F    | _, _, R
+q2->q2|m,m,L
+q2->q2|s,s,L
+q2->F|_,_,R
 
-# Transições para erro (completude)
-I   -> erro | X, X, R  Y, Y, R
-q1  -> erro | X, X, R  Y, Y, R
-q2  -> erro | 0, 0, L  1, 1, L
-F   -> erro | 0, 0, R  1, 1, R  X, X, R  Y, Y, R
-erro -> erro | 0, 0, R  1, 1, R  X, X, R  Y, Y, R  _, _, R
+# Transições para erro (completude, incluindo espaço em branco)
+I->erro|f,f,R
+I->erro|c,c,R
+I->erro|o,o,R
+I->erro| , ,R
+q1->erro|f,f,R
+q1->erro|c,c,R
+q1->erro|o,o,R
+q1->erro| , ,R
+q2->erro|f,f,L
+q2->erro|c,c,L
+q2->erro|o,o,L
+q2->erro| , ,L
+F->erro|a,a,R
+F->erro|m,m,R
+F->erro|l,l,R
+F->erro|s,s,R
+F->erro|f,f,R
+F->erro|c,c,R
+F->erro|o,o,R
+F->erro| , ,R
+erro->erro|a,a,R
+erro->erro|m,m,R
+erro->erro|l,l,R
+erro->erro|s,s,R
+erro->erro|f,f,R
+erro->erro|c,c,R
+erro->erro|o,o,R
+erro->erro|_,_,R
+erro-
